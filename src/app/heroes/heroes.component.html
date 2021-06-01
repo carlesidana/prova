@@ -1,0 +1,12 @@
+<ul *ngIf="heroes">
+    <li *ngFor="let heroe of heroes" (click)="selectHero(heroe)">
+        <p [ngClass]="{'bold': heroe?.id === selectedHero?.id}">{{heroe.name}}</p>
+    </li>
+
+    <button (click)="add()">Añadir</button>
+    <button (click)="edit()">Editar</button>
+    <button (click)="delete()">Borrar</button>
+</ul>
+<div *ngIf="heroFormToggle">
+    <heroe-form  [heroForm]="heroForm" (onSavedState)="onSavedHeroForm($event)"></heroe-form>
+</div>

@@ -1,0 +1,12 @@
+<form *ngIf="heroForm" [formGroup]="heroForm">
+    <div>
+        <p>
+            Name: <input type="text" name="hero-name" id="heroesFormInputName" formControlName="name">
+        </p>
+        <span *ngIf="heroForm.getError('required')"> hello</span>
+        <p>
+            Age:  <input type="text" name="hero-age" id="heroesFormInputAge" formControlName="age">
+        </p>
+        <button (click)="submit()">save</button>
+    </div>
+</form>
